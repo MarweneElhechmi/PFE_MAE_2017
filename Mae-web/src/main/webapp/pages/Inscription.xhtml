@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrought"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0,maximum-scale=1" />
+
+	<title>Insurance | Insurances type</title>
+
+
+	<link
+		href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|"
+		rel="stylesheet" type="text/css" />
+	<link
+		href="#{request.contextPath}/pages/templates/fonts/font-awesome.min.css"
+		rel="stylesheet" type="text/css" />
+	<link
+		href="#{request.contextPath}/pages/templates/fonts/lineo-icon/style.css"
+		rel="stylesheet" type="text/css" />
+	<link rel="stylesheet"
+		href="#{request.contextPath}/pages/templates/style.css" />
+
+	<style type="text/css">
+.visu {
+	background: #F5F5F5 url(images/visu.png) no-repeat 10px 15px;
+	border: 1px solid #C0C0C0;
+	color: #404040;
+	padding: 10 10px 10px 10px;
+	margin: 50px 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 3px 3px 6px 0 #A9A9A9;
+	-webkit-box-shadow: 3px 3px 6px #A9A9A9;
+	box-shadow: 3px 3px 6px 0 #A9A9A9;
+	width: 680px;
+}
+
+.style-fieldset {
+	border: solid 1px black;
+	border-color:#6495ed;
+	border-radius: 10px;
+	background-color: #F2F2F2;
+	width: 200px;
+	padding: 10px 10px 10px 30px;
+	font-family: verdana;
+	font-size: 12px;
+	margin-right: 90px
+}
+
+.style-legend {
+	font-family: verdana;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.myButton {
+	background-color: #44c767;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	border: 1px solid #18ab29;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 17px;
+	padding: 16px 31px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #2f6627;
+}
+
+.myButton:hover {
+	background-color: #5cbf2a;
+}
+
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
+
+.c .form2 .PG .btn {
+	-webkit-border-radius: 27;
+	-moz-border-radius: 27;
+	border-radius: 27px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 20px;
+	background: #3498db;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+}
+
+.c .form2 .PG .btn:hover {
+	background: #3cb0fd;
+	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
+}
+</style>
+</h:head>
+<body>
+
+	<!-- ************************************************************** -->
+	<div id="site-content">
+		<header class="site-header">
+		<div class="top-header">
+			<div class="container">
+				<a href="/pages/ALL_USER/index.xhtml" id="branding"> <img
+					src="#{request.contextPath}/pages/templates/images/logo_mae.png"
+					alt="" class="logo" />
+
+					<div class="logo-text">
+						<h1 class="site-title"></h1>
+						<small class="description"></small>
+					</div>
+				</a>
+				<!-- #branding -->
+
+				<div class="right-section pull-right">
+					<a href="#" class="phone"><img
+						src="#{request.contextPath}/pages/templates/images/icon-phone.png"
+						class="icon" />+1 823 424 9134</a>
+
+					<form action="#" class="search-form">
+						<input type="text" placeholder="Search..." />
+						<button type="submit">
+							<img
+								src="#{request.contextPath}/pages/templates/images/icon-search.png"
+								alt="" />
+						</button>
+					</form>
+				</div>
+			</div>
+			<!-- .container -->
+		</div>
+		<div class="bottom-header">
+			<div class="container">
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="menu">
+								<li class="menu-item"><a href="#{request.contextPath}/pages/about.jsf">About us</a></li>
+						<li class="menu-item"><a href="#{request.contextPath}/pages/Client/contact.xhtml">Contact</a></li>
+					</ul>
+					<!-- .menu -->
+				</div>
+				<!-- .main-navigation -->
+
+
+			</div>
+		</div>
+		</header>
+	</div>
+
+	<!-- .top-header -->
+	<!-- ***************************************************************** -->
+
+
+	<center class="c">
+
+		<h:form class="form2" id="msg">
+			<p:growl id="msgs" showDetail="true" />
+			<div class="visu border">
+
+				<div
+					style="background-color: #6495ed; height: 40px; margin-top: 30px">
+					<h:outputText />
+					<h5 style="color: white; margin-top: 10px; matgin-bottom: 10px">
+						INSCRIPTION </h5>
+				</div>
+			<h:panelGrid columns="1" style="margin-bottom:10px;margin-top:20px"
+					cellpadding="5" class="PG">
+
+
+					<!--  <h:outputText value=" Numéro Sinistre:"
+						p:style="width: 100px;font-weight:bold" id="fname" for="name" />
+						
+					<p:inputText id="name" required="true" requiredMessage="Numéro Sinistre"
+						value="#{VictimeBean.victime.num_sinistre}"
+						style="width:200px" placeholder="Numéro Sinistre">
+						<p:ajax event="blur" update="mname fname"></p:ajax>
+						</p:inputText>
+						<p:message for="name" id="mname"/>-->
+						
+						<h:outputText value="CIN" id="cin" for="name10"
+						p:style="width: 100px;font-weight:bold"  />
+						
+					<p:inputText id="name10" required="true" requiredMessage="CIN"
+					 value="#{inscriptionBean.cin}"
+						style="width:200px" placeholder="CIN">
+						<p:ajax event="blur" update="ctryi cin"></p:ajax>
+						<f:validateLength maximum="8" minimum="8" />
+					<f:validator validatorId="CinTelValidator"/>
+						</p:inputText>
+						<p:message for="name10" id="ctryi"></p:message>
+						
+								<h:outputText value="Nom" id="cy" for="name4"
+						p:style="width: 100px;font-weight:bold"  />
+						
+					<p:inputText id="name4" required="true" requiredMessage="Nom"
+					 value="#{inscriptionBean.nom}"
+						style="width:200px" placeholder="Nom">
+						<p:ajax event="blur" update="ctry cy"></p:ajax>
+						</p:inputText>
+						<p:message for="name4" id="ctry"></p:message>
+						
+						<h:outputText value="Prenom" id="av" for="name6"
+						p:style="width: 100px;font-weight:bold" />
+						
+					<p:inputText id="name6" required="true" requiredMessage="Prenom" 
+     					converterMessage="Champ de type string"
+     					value="#{inscriptionBean.prenom}"
+						style="width:200px"  placeholder="Prenom">
+						<p:ajax event="blur" update="acv av"></p:ajax>
+						</p:inputText>
+						<p:message for="name6" id="acv"></p:message>
+						
+					<h:outputText value="Date Naissance" id="lname" for="name1"
+						p:style="width: 100px;font-weight:bold" />
+						
+					<p:calendar id="name1" required="true" pattern="dd/MM/yyyy" maxdate="#{now}" 
+					requiredMessage="Date Naissance" 
+					value="#{inscriptionBean.naissance}"
+						style="width:200px" placeholder="Date Naissance">
+						<p:ajax event="blur" update="nname lname"></p:ajax>
+						<f:validator validatorId="dateValidator"/>
+						</p:calendar>
+						<p:message for="name1" id="nname"/>
+						
+						<h:outputText value="Téléphone" id="avp" for="name12"
+						p:style="width: 100px;font-weight:bold" />
+						
+					<p:inputText id="name12" required="true" requiredMessage="Téléphone" 
+     					converterMessage="Champ de type string"
+     					value="#{inscriptionBean.telephone}"
+						style="width:200px"  placeholder="Téléphone">
+						<p:ajax event="blur" update="acvp avp"></p:ajax>
+						<f:validateLength maximum="8" minimum="8" />
+					<f:validator validatorId="CinTelValidator"/>
+						</p:inputText>
+						<p:message for="name12" id="acvp"></p:message>
+						
+						<h:outputText value="Email" id="avr" for="name13"
+						p:style="width: 100px;font-weight:bold" />
+						
+					<p:inputText id="name13" required="true" requiredMessage="Email" 
+     					converterMessage="Champ de type string"
+     					value="#{inscriptionBean.email}"
+						style="width:200px"  placeholder="Email">
+						<p:ajax event="blur" update="acvr avr"></p:ajax>
+						 <f:validator validatorId="EmailValidator" />
+						</p:inputText>
+						<p:message for="name13" id="acvr"></p:message>
+						
+					<h:outputText value="Password" id="lnamed" for="name1d"
+						p:style="width: 100px;font-weight:bold" />
+						
+					<p:password id="name1d" required="true"  
+					requiredMessage="Password" 
+					value="#{inscriptionBean.pwd}"
+						style="width:200px" placeholder="Password">
+						<p:ajax event="blur" update="nnamed lnamed"></p:ajax>
+						</p:password>
+						<p:message for="name1d" id="nnamed"/> 
+						
+						<h:outputText value="Confirmer Password" id="lnamedp" for="name1dp"
+						p:style="width: 100px;font-weight:bold" />
+						
+					<p:password id="name1dp" required="true"  
+					requiredMessage="Password" 
+					value="#{inscriptionBean.pwdConfirm}"
+						style="width:200px" placeholder="Password">
+						<p:ajax event="blur" update="nnamedp lnamedp"></p:ajax>
+						</p:password>
+						<p:message for="name1dp" id="nnamedp"/>  
+						
+			<!--  <p:outputLabel for="basic12" value="ETAT:" />
+        <p:selectOneListbox id="basic12" required="true"
+						value="" style="width:200px" >
+						<f:selectItem itemLabel="Agent General" itemValue="agent" />
+						<f:selectItem itemLabel="Gestionnaire Sinistre" itemValue="GestionnaireSinistre" />
+						<f:selectItem itemLabel="Financier" itemValue="financier" />
+					</p:selectOneListbox>
+					-->
+                      <p:outputLabel for="console" value="Etat:" />
+        <p:selectOneMenu id="console" value="#{inscriptionBean.typeD}" style="width:125px">
+                <f:selectItem itemLabel="Select One" itemValue="" />
+                        <f:selectItem itemLabel="Agent General" itemValue="agent" />
+						<f:selectItem itemLabel="Gestionnaire Sinistre" itemValue="gestionnaire" />
+						<f:selectItem itemLabel="Financier" itemValue="financier" />
+        </p:selectOneMenu>
+						<div>
+		<p:commandButton styleClass="btn" value="Valider" style="width:8em;display:inline-block;" action="#{inscriptionBean.AddUser()}" update="msgs"  /> 		
+						</div>
+					
+
+				</h:panelGrid>
+				</div>
+				
+		</h:form>
+	</center>
+
+
+
+
+</body>
+</html>

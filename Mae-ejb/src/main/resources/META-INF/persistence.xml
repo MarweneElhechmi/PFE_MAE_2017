@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="Mae-ejb">
+		<jta-data-source>java:jboss/datasources/MaEDS</jta-data-source>
+		<class>tn.esprit.MaE.entities.Admin</class>
+		<class>tn.esprit.MaE.entities.AgentGeneral</class>
+		<class>tn.esprit.MaE.entities.Beneficiaire</class>
+		<class>tn.esprit.MaE.entities.Coefficient</class>
+		<class>tn.esprit.MaE.entities.Financier</class>
+		<class>tn.esprit.MaE.entities.GestionnaireSinistre</class>
+		<class>tn.esprit.MaE.entities.Police</class>
+		<class>tn.esprit.MaE.entities.QuittanceDePrime</class>
+		<class>tn.esprit.MaE.entities.Rente</class>
+		<class>tn.esprit.MaE.entities.Sinistre</class>
+		<class>tn.esprit.MaE.entities.User</class>
+		<class>tn.esprit.MaE.entities.Victime</class>
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+		</properties>
+	</persistence-unit>
+</persistence>

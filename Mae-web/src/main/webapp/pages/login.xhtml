@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:pass="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"> 
+      
+	<h:head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1"/>
+		
+		<title>Insurance | Insurances type</title>
+		
+		
+		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|" rel="stylesheet" type="text/css"/>
+		<link href="#{request.contextPath}/pages/templates/fonts/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+		<link href="#{request.contextPath}/pages/templates/fonts/lineo-icon/style.css" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="#{request.contextPath}/pages/templates/style.css"/>
+		
+
+
+	</h:head>
+
+
+	<body>
+		
+		<div id="site-content">
+			<header class="site-header">
+				<div class="top-header">
+					<div class="container">
+						<a href="/pages/ALL_USER/index.xhtml" id="branding">
+							<img src="#{request.contextPath}/pages/templates/images/logo_mae.png" alt="STAR Assurance" class="logo"/>
+							    
+							<div class="logo-text">
+								<h1 class="site-title"></h1>
+								<small class="description"></small>
+							</div>
+						</a> <!-- #branding -->
+					
+						<div class="right-section pull-right">
+							<a href="#" class="phone"><img src="#{request.contextPath}/pages/templates/images/icon-phone.png" class="icon"/> 70 020 300</a>
+					
+							<!--  <form action="#" class="search-form">
+								<input type="text" placeholder="Search..."/>
+								<button type="submit"><img src="#{request.contextPath}/pages/templates/images/icon-search.png" alt=""/></button>
+							</form>
+							-->
+						</div>
+					</div> <!-- .container -->
+				</div> <!-- .top-header -->
+
+				
+				<div class="bottom-header">
+					<div class="container">
+						<div class="main-navigation">
+							<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+							<ul class="menu">
+									<li class="menu-item"><a href="#{request.contextPath}/pages/about.jsf">About us</a></li>
+						<li class="menu-item"><a href="#{request.contextPath}/pages/Client/contact.xhtml">Contact</a></li>
+						
+						</ul> <!-- .menu -->
+						</div> <!-- .main-navigation -->
+						
+						<div class="social-links">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-google-plus"></i></a>
+							<a href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+						
+						<div class="mobile-navigation"></div>
+					</div>
+				</div>
+				
+			</header> <!-- .site-header -->
+
+			<main class="main-content">
+				<div class="breadcrumbs">
+					<div class="container">
+						
+					</div>
+				</div>
+				
+					<div class="page">
+				
+					<div class="container">
+
+					
+					<h:form id="loginForm">
+					<center>
+					
+					<h:inputText id="idLogin"
+							requiredMessage="Please verify your email" 
+							value="#{authBean.email}" 
+							pass:type="email" pass:placeholder="Email" />
+							<br>
+							</br>
+
+						 
+					<h:inputSecret id="idPassword"
+							requiredMessage="Please verify your password" 
+							value="#{authBean.pwd}" 
+							pass:placeholder="Password" />
+						
+						
+						 <br/>
+						 <p:messages autoUpdate="true" closable="true" style="width:200px"/>
+						  <br>
+						 <br>
+						 <h:commandButton action="#{authBean.doLogin}" value="Sign " />
+						 </br>
+						 </br>
+					
+						 <br>
+						 <h:commandLink value="INSCRIPTION" action="#{authBean.page_Inscri()}" /> 
+						 
+						 
+						 </br>
+						 </center>
+						 </h:form>
+						 
+						 
+					</div>
+				</div> <!-- .page -->
+
+			</main>
+
+		
+		</div>
+
+		<script src="#{request.contextPath}/pages/templates/js/jquery-1.11.1.min.js"></script>
+		<script src="#{request.contextPath}/pages/templates/js/plugins.js"></script>
+		<script src="#{request.contextPath}/pages/templates/js/app.js"></script>
+		
+		
+	</body>
+
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrought"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0,maximum-scale=1" />
+
+	<title>Insurance | Insurances type</title>
+
+
+	<link
+		href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|"
+		rel="stylesheet" type="text/css" />
+	<link
+		href="#{request.contextPath}/pages/templates/fonts/font-awesome.min.css"
+		rel="stylesheet" type="text/css" />
+	<link
+		href="#{request.contextPath}/pages/templates/fonts/lineo-icon/style.css"
+		rel="stylesheet" type="text/css" />
+	<link rel="stylesheet"
+		href="#{request.contextPath}/pages/templates/style.css" />
+
+	<style type="text/css">
+.visu {
+	background: #F5F5F5 url(images/visu.png) no-repeat 10px 15px;
+	border: 1px solid #C0C0C0;
+	color: #404040;
+	padding: 10 10px 10px 10px;
+	margin: 50px 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 3px 3px 6px 0 #A9A9A9;
+	-webkit-box-shadow: 3px 3px 6px #A9A9A9;
+	box-shadow: 3px 3px 6px 0 #A9A9A9;
+	width: 820px;
+	height:500px;
+}
+
+.style-fieldset {
+	border: solid 1px black;
+	border-radius: 10px;
+	background-color: #F2F2F2;
+	width: 200px;
+	padding: 10px 10px 10px 30px;
+	font-family: verdana;
+	font-size: 12px;
+	margin-right: 90px
+}
+
+.style-legend {
+	font-family: verdana;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.myButton {
+	background-color: #44c767;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	border: 1px solid #18ab29;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 17px;
+	padding: 16px 31px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #2f6627;
+}
+
+.myButton:hover {
+	background-color: #5cbf2a;
+}
+
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
+
+.c .form2 .PG .btn {
+	-webkit-border-radius: 50;
+	-moz-border-radius: 50;
+	border-radius: 50px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 50px;
+	background: #3498db;
+	padding: 40px 50px 40px 50px;
+	text-decoration: none;
+}
+
+.c .form2 .PG .btn:hover {
+	background: #3cb0fd;
+	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
+}
+</style>
+</h:head>
+<body>
+
+	<!-- ************************************************************** -->
+	<div id="site-content">
+		<header class="site-header">
+		<div class="top-header">
+			<div class="container">
+				<a href="/pages/ALL_USER/index.xhtml" id="branding">  
+											<img src="#{request.contextPath}/pages/templates/images/logo_mae.png" alt="STAR Assurance" class="logo"/>
+				
+
+					<div class="logo-text">
+						 
+					</div>
+				</a>
+				<!-- #branding -->
+
+			<div class="right-section pull-right">
+							<a href="#" class="phone"><img src="../templates/images/icon-phone.png" class="icon"/> 70 020 300</a>
+					
+							<!-- form action="#" class="search-form">
+								<input type="text" placeholder="Search..."/>
+								<button type="submit"><img src="../templates/images/icon-search.png" alt=""/></button>
+							</form>
+							 -->
+							 
+							<br>
+				
+					<h:form>
+					
+
+		<b> <h2>#{authBean.identityBean.identifieduser.prenom} #{authBean.identityBean.identifieduser.nom}</h2></b>
+ 
+					</h:form>					
+					</br>
+							 
+							 <h:form>
+								<h:commandButton styleClass="btn"
+								
+								action="#{authBean.dologout()}" value="LogOut" image="/pages/templates/images/logout.png" />
+								
+								</h:form>
+						</div>
+			</div>
+			<!-- .container -->
+		</div>
+		<div class="bottom-header">
+			<div class="container">
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="menu">
+						<li class="menu-item"><a href="#{request.contextPath}/pages/GestionnaireSinistre/index.jsf">Home</a></li>
+							   	<li class="menu-item"><a href="#{request.contextPath}/pages/GestionnaireSinistre/RenteUp.jsf">Modification et Validation Rente </a></li>
+ 							    <li class="menu-item"><a href="#{request.contextPath}/pages/GestionnaireSinistre/ListeRentes.jsf">Liste Des Rentes</a></li>
+ 							    <li class="menu-item"><a href="#{request.contextPath}/pages/GestionnaireSinistre/PM.jsf">Modification et Validation Provision </a></li>
+ 							    <li class="menu-item"><a href="#{request.contextPath}/pages/GestionnaireSinistre/ListePM.jsf">Liste Des Provisions</a></li>
+ 							    <li class="menu-item"><a href="#{request.contextPath}/pages/GestionnaireSinistre/RenteValid.jsf">Etat Dossier</a></li>
+ 							    <li class="menu-item"><a href="#{request.contextPath}/pages/GestionnaireSinistre/pdf.jsf">PDF</a></li>
+ 							    
+					</ul>
+					<!-- .menu -->
+				</div>
+				<!-- .main-navigation -->
+
+
+			</div>
+		</div>
+		</header>
+	</div>
+
+	<!-- .top-header -->
+	<!-- ***************************************************************** -->
+
+
+	<center class="c">
+
+		
+			<div class="visu border" style="background: url('images.jpg');">
+
+				<div class="logo-text" style="margin-top: 40px">
+				
+					<h1 class="site-title" style="margin-top: 50px">
+								LISTE DES RENTES
+						
+					</h1>
+				</div>
+				
+<!-- ******************************************************************************************************************* -->
+
+
+	
+	<h:form id="tra"> 
+                      <center><h2><font color="black"><b><i>RENTE</i></b></font></h2></center>
+                      <p:growl id="growl"></p:growl>
+     <p:dataTable id="tbl" value="#{renteBean.rentes}" var="rente" 
+     									rows="10" 
+     									filteredValue="#{renteBean.rentesFiltred}"
+     									paginator="true" 
+     									paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">       
+  <p:column headerText="DEBUT">
+          #{rente.debut}
+     
+     </p:column>
+     
+      <p:column headerText="RENTE" >
+          #{rente.rente}
+     
+     </p:column>
+     
+      <p:column headerText="FIN" >
+          #{rente.fin}
+     
+     </p:column>
+     
+     <p:column headerText="VALIDATION" >
+          #{rente.valider}
+     
+     </p:column>
+     
+     <p:column headerText="DATE VALIDATION" >
+          #{rente.datePriseRente}
+     
+     </p:column>
+     
+     <p:column headerText="CIN" filterBy="#{rente.beneficiairesR.cinb}" >
+          #{rente.beneficiairesR.cinb}
+     
+     </p:column>
+     
+     <p:column headerText="BENEFICIAIRE" filterBy="#{rente.beneficiairesR.prenom}" >
+          #{rente.beneficiairesR.nom} #{rente.beneficiairesR.prenom}
+     
+     </p:column>
+     
+     <p:column headerText="ETAT BENEFICIAIRE">
+          #{rente.beneficiairesR.etat}
+     
+     </p:column>
+     
+      <p:column headerText="Victime" filterBy="#{rente.beneficiairesR.victime.nom}">
+          #{rente.beneficiairesR.victime.nom} #{rente.beneficiairesR.victime.prenom}
+     
+     </p:column>
+      
+    
+     
+           <p:column>
+      <f:facet name="header"><h3><b><font color="blue">PDF</font></b></h3></f:facet>
+									<h:commandButton styleClass="btn btn-danger btn-block btn-flat"
+										action="#{renteBean.imprim(rente)}" image="/pages/templates/images/002-pdf.png" update="@form">
+     </h:commandButton>
+     </p:column>
+      
+     
+        <p:column>
+      <f:facet name="header"><h3><b><font color="blue">Delete</font></b></h3></f:facet>
+									<h:commandButton styleClass="btn btn-danger btn-block btn-flat"
+										action="#{renteBean.doDelete(rente)}" image="/pages/templates/images/001-delete.png" update="@form">
+     </h:commandButton>
+     </p:column>
+      
+      
+</p:dataTable>
+              
+ 
+         						
+    <br/>
+     </h:form>
+     <br/>
+     
+     
+     
+			
+     <div class="container">
+       			       		       		
+     	
+     		
+     		     </div>
+     		    
+	
+<!--  -->			
+			</div>
+		
+	</center>
+
+
+</body>
+</html>
